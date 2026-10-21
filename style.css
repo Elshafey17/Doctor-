@@ -1,0 +1,421 @@
+@import url('https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap');
+
+:root {
+  color-scheme: light;
+  --ink: #173538;
+  --teal: #277b74;
+  --paper: #fffefa;
+  --line: #e3ece8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 56px 22px 34px;
+  display: grid;
+  place-items: center;
+  color: var(--ink);
+  font-family: 'Alexandria', Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(ellipse at 12% 14%, rgba(133, 196, 177, .22), transparent 28%),
+    radial-gradient(ellipse at 88% 82%, rgba(196, 220, 209, .35), transparent 30%),
+    #f1f5f2;
+}
+
+.page-shell {
+  width: min(100%, 1020px);
+}
+
+.thank-you-card {
+  position: relative;
+  overflow: hidden;
+  padding: 46px clamp(24px, 6vw, 76px) 28px;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 28px;
+  background: var(--paper);
+  box-shadow:
+    0 28px 80px rgba(26, 60, 55, .11),
+    0 3px 12px rgba(26, 60, 55, .04);
+}
+
+.thank-you-card::before,
+.thank-you-card::after {
+  position: absolute;
+  z-index: 0;
+  content: '';
+  pointer-events: none;
+}
+
+.thank-you-card::before {
+  top: -118px;
+  left: -112px;
+  width: 280px;
+  height: 280px;
+  border: 1px solid rgba(39, 123, 116, .09);
+  border-radius: 50%;
+  box-shadow:
+    0 0 0 22px rgba(39, 123, 116, .025),
+    0 0 0 46px rgba(39, 123, 116, .02);
+}
+
+.thank-you-card::after {
+  top: 0;
+  right: 0;
+  width: 7px;
+  height: 100%;
+  background: linear-gradient(180deg, #73b6a2, #277b74 54%, #173538);
+}
+
+.card-topline,
+.hero,
+.divider,
+.letter-layout,
+.card-footer {
+  position: relative;
+  z-index: 1;
+}
+
+.card-topline {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: var(--teal);
+}
+
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d7e9e2;
+  border-radius: 13px;
+  background: #f3faf6;
+}
+
+.brand-mark svg {
+  width: 25px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.brand-mark .pulse {
+  stroke-width: 1.7;
+}
+
+.topline-text {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: .02em;
+}
+
+.topline-line {
+  width: 58px;
+  height: 1px;
+  background: #c9dfd7;
+}
+
+.hero {
+  margin: 38px auto 0;
+  text-align: center;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 156px;
+  height: 178px;
+  margin: 0 auto 25px;
+}
+
+.portrait-window {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border: 5px solid #fff;
+  border-radius: 78px 78px 26px 26px;
+  background: #f3f7f4;
+  box-shadow: 0 12px 30px rgba(23, 53, 56, .15);
+}
+
+.doctor-portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 19%;
+  transform: scale(1.2);
+}
+
+.portrait-accent {
+  position: absolute;
+  z-index: 0;
+  right: -8px;
+  bottom: -8px;
+  width: 72px;
+  height: 72px;
+  border-right: 2px solid #82b9a8;
+  border-bottom: 2px solid #82b9a8;
+  border-radius: 0 0 24px 0;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+h1 {
+  margin: 0;
+  color: #102f32;
+  font-size: clamp(36px, 6vw, 58px);
+  font-weight: 600;
+  letter-spacing: -.045em;
+  line-height: 1.35;
+}
+
+.doctor-title {
+  margin: 12px 0 0;
+  color: #687c79;
+  font-size: clamp(18px, 3vw, 23px);
+}
+
+.doctor-title span {
+  color: var(--teal);
+  font-weight: 600;
+}
+
+.hero-description {
+  margin: 15px 0 0;
+  color: #879693;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+.divider {
+  display: flex;
+  justify-content: center;
+  margin: 35px auto 30px;
+}
+
+.divider span {
+  width: 54px;
+  height: 3px;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #96cdbb, #277b74);
+}
+
+/* بطاقة كلمة من القلب تظهر فوق نص الرسالة */
+.letter-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 30px;
+  direction: rtl;
+}
+
+.gratitude-note {
+  display: grid;
+  grid-template-columns: 48px 1fr;
+  column-gap: 16px;
+  align-items: center;
+  width: min(100%, 720px);
+  margin: 0 auto;
+  padding: 20px 24px;
+  border: 1px solid #e4eee9;
+  border-radius: 18px;
+  background: linear-gradient(150deg, #f4faf6, #eef6f1);
+}
+
+.note-icon {
+  grid-row: span 2;
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  border-radius: 15px;
+  color: var(--teal);
+  background: #dcefe7;
+}
+
+.note-icon svg {
+  width: 25px;
+  fill: currentColor;
+}
+
+.note-kicker {
+  align-self: end;
+  margin: 0 0 2px;
+  color: #4f7770;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.note-copy {
+  align-self: start;
+  margin: 0;
+  color: #315653;
+  font-family: 'Amiri', Georgia, serif;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.note-rule,
+.note-caption {
+  display: none;
+}
+
+.letter {
+  width: min(100%, 780px);
+  margin-inline: auto;
+  color: #506664;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.15;
+}
+
+.letter p {
+  margin: 0 0 16px;
+}
+
+.letter .greeting {
+  margin-bottom: 12px;
+  color: #234d49;
+  font-size: 17px;
+  font-weight: 600;
+}
+
+.signature {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 27px;
+  color: var(--teal);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.signature-line {
+  width: 29px;
+  height: 1px;
+  background: #8dbdad;
+}
+
+.signature-leaf {
+  color: #8cbba8;
+  font-size: 14px;
+}
+
+.signature-name {
+  margin: 5px 0 0 40px !important;
+  color: #315653;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.card-footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+  padding-top: 21px;
+  border-top: 1px solid var(--line);
+  color: #92a09c;
+  font-size: 11px;
+  text-align: center;
+}
+
+.footer-dot {
+  width: 4px;
+  height: 4px;
+  flex: 0 0 4px;
+  border-radius: 50%;
+  background: #8ebba9;
+}
+
+.page-caption {
+  margin: 22px 0 0;
+  color: #55726d;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.9;
+  text-align: center;
+}
+
+@media (max-width: 700px) {
+  body {
+    padding: 24px 14px;
+  }
+
+  .page-shell {
+    width: 100%;
+  }
+
+  .thank-you-card {
+    padding: 28px clamp(18px, 6vw, 30px) 23px;
+    border-radius: 22px;
+  }
+
+  .hero {
+    margin-top: 30px;
+  }
+
+  .portrait-frame {
+    width: 132px;
+    height: 152px;
+    margin-bottom: 22px;
+  }
+
+  .letter-layout {
+    gap: 25px;
+  }
+
+  .gratitude-note {
+    padding: 17px;
+  }
+
+  .note-copy {
+    font-size: 18px;
+  }
+
+  .divider {
+    margin: 28px auto;
+  }
+
+  .letter {
+    font-size: 13px;
+    line-height: 2;
+  }
+
+  .card-footer {
+    margin-top: 29px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-caption {
+    font-size: 13px;
+  }
+
+  .hero-description {
+    font-size: 11px;
+  }
+
+  .topline-line {
+    width: 32px;
+  }
+
+  .card-footer {
+    gap: 7px;
+    font-size: 10px;
+  }
+}
